@@ -1,0 +1,60 @@
+Question 1
+ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 402, "Eddie" => 10 }
+ages.key?("Spot")
+ages.member?("Spot")
+ages.include?("Spot")
+
+Question 2
+irb(main):016:0> munsters_description.capitalize
+=> "The munsters are creepy in a good way."
+irb(main):017:0> munsters_description.swapcase
+=> "tHE mUNSTERS ARE CREEPY IN A GOOD WAY."
+irb(main):018:0> munsters_description.downcase
+=> "the munsters are creepy in a good way."
+irb(main):019:0> munsters_description.upcase
+=> "THE MUNSTERS ARE CREEPY IN A GOOD WAY."
+
+Question 3
+irb(main):022:0> ages.merge!(additional_ages)
+=> {"Herman"=>32, "Lily"=>30, "Grandpa"=>402, "Eddie"=>10, "Marilyn"=>22, "Spot"=>237}
+
+Question 4
+irb(main):024:0> advice.include?("Dino")
+=> false
+Text uses #match.
+#match takes a string or regex as input and returns information about the match. #include? takes a string and returns true/false.
+irb(main):025:0> advice.match("Dino")
+=> nil
+irb(main):026:0> advice.include?('lif')
+=> true
+irb(main):027:0> advice.match('lif')
+=> #<MatchData "lif">
+irb(main):028:0> advice.match('Dino')
+=> nil
+
+Question 5
+flintstones = %w(Fred Barney Wilma Betty BamBam Pebbles)
+
+Question 6
+irb(main):030:0> flintstones << "Dino"
+=> ["Fred", "Barney", "Wilma", "Betty", "BamBam", "Pebbles", "Dino"]
+
+Question 7
+irb(main):031:0> new_values = %w(Dino Hoppy)
+=> ["Dino", "Hoppy"]
+irb(main):032:0> flintstones.concat(new_values)
+=> ["Fred", "Barney", "Wilma", "Betty", "BamBam", "Pebbles", "Dino", "Dino", "Hoppy"]
+Without creating a new array: flintstones.push("Dino").push("Hoppy")
+
+Question 8
+irb(main):050:0> advice.slice!(0..38)
+=> "Few things in life are as important as "
+irb(main):051:0> advice
+=> "house training your pet dinosaur."
+
+Question 9
+statement.count('t')
+
+Question 10
+irb(main):017:0> title.center(40, ' ')
+=> "       Flintstone Family Members        "
