@@ -1,0 +1,51 @@
+Question 1
+1
+2
+2
+3
+
+Question 2
+In general, ! on the end of a method will mutate the caller. ? indicates that the return value will be a Boolean, i.e., true or false. However, they are just characters used in the method name, and only convention dictates the above. The actual result of the method depends on how it is coded.
+1. != means is not equal to. It can be used as a comparison and returns true or false. For example 5 != 5 would return false.
+2. Putting ! before a variable, such as !user_name, will return false, since Ruby by default returns true, except for nil and false: !nil => true and !false =>, while nil => nil and false => false.
+3. Putting ! after a method mutates the caller. [1, 2, 2, 3].uniq will return [1, 2, 3], but the original array will not change. [1, 2, 2, 3].uniq!, however, will change the original array to [1, 2, 3].
+4. Putting ? before something returns an error.
+5. Putting ? after a method implies a comparison, but it is really just part of the method name and the result of the method depends on how it is coded.
+6. Putting !! is a double negative, and returns the negative of the original negative. However, nil, which returns nil when evaluated on its own, will return false when preceded by !!. Per the text, !! returns the original Boolean value of the variable.
+
+Question 3
+advice.sub("important", "urgent") to return the string with this value one time.
+advice.sub!("important", "urgent") to permanently change the string.
+
+Method gsub/gsub! will replace all occurrences of the pattern with the new pattern. #sub/sub! only replaces the first occurrence.
+
+Question 4
+When numbers = [1, 2, 3, 4, 5], numbers.delete_at(1) returns 2 and mutates numbers to [1, 3, 4, 5], deleting the value in numbers at index 1.
+When numbers = [1, 2, 3, 4, 5], numbers.delete(1) returns 1 and mutates numbers to [2, 3, 4, 5], deleting the value 1 from numbers.
+
+Question 5
+(10..100).include?(42)
+#cover? gives the same result, and may perform better in this case. #include? looks for an exact match, while #cover? checks to see if the evaluated object might be in the range. For numbers, use #cover?.
+irb(main):016:0> ('a'..'z').include?('yellow')
+=> false
+irb(main):017:0> ('a'..'z').cover?('yellow')
+=> true
+
+Question 6
+irb(main):018:0> famous_words = "seven years ago…"
+=> "seven years ago…"
+irb(main):019:0> new_words = "Four score and " + famous_words
+=> "Four score and seven years ago…"
+irb(main):020:0> new_words = "Four score and #{famous_words}"
+=> "Four score and seven years ago…"
+"Four score and " << famous_words
+famous_words.prepend("Four score and ")
+
+Question 7
+WTF?
+
+Question 8
+flintstones.flatten!
+
+Question 9
+flintstones.assoc("Barney")
