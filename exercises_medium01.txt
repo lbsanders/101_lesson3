@@ -1,0 +1,32 @@
+Question 1
+10.times { |x| puts (' ' * x) + "The Flintstones Rock!" }
+
+Question 2
+This returns an error because it is trying to combine a string and a Fixnum. You can fix it in a couple of different ways:
+puts "the value of 40 + 2 is #{40 + 2}"
+puts "the value of 40 + 2 is " + (40 + 2).to_s
+
+Question 3
+def factors(number)
+  dividend = number
+  divisors = []
+  while dividend > 0
+    divisors << number / dividend if number % dividend == 0
+    dividend -= 1
+  end
+  divisors
+end
+
+  Bonus 1
+  The purpose of expression number % dividend == 0 is to determine if the number can be evenly divided by the dividend, i.e., where the remainder is 0.
+
+  Bonus 2
+  The purpose of the line divisors is to return the value of divisors. This is then printed by the puts statement I added to test the code.
+
+Question 4
+Using << will mutate buffer, while using + will not actually change the value of buffer.
+
+Question 5
+Either assign the value of limit inside the method, or make limit a constant LIMIT and change the variable limit in the method to LIMIT.
+
+Question 6
